@@ -24,7 +24,6 @@ export const Pill = styled.div`
   overflow: hidden;
 `
 
-
 export const Close = styled.button`
   background: none;
   border: 0;
@@ -51,5 +50,27 @@ export const Close = styled.button`
 
   &::after {
     transform: rotate(-45deg);
+  }
+`
+
+export const Button = styled.button`
+  border: 2px solid #000;
+  border-radius: 30px;
+
+  background: transparent;
+  font-size: 18px;
+  font-family: 'Work Sans', sans-serif;
+  cursor: pointer;
+  margin-bottom: 10px;
+
+  padding: ${({$hasEmoji}) => ($hasEmoji ? '5px 14px' : '8px')};
+
+  display: block;
+  margin-bottom: ${({$isHeader}) => ($isHeader ? '0' : '14px')};
+  width: ${({$isHeader}) => ($isHeader ? '140px' : 'unset')};
+
+  @media (max-width: 1000px) {
+    font-size: 14px;
+    width: ${({$isHeader}) => ($isHeader ? '110px' : 'unset')};
   }
 `

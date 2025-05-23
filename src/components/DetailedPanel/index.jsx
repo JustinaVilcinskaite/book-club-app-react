@@ -1,9 +1,9 @@
 import React, {useRef, useEffect} from 'react'
 import {Panel, P, Em, CloseWrapper, BG} from './styles'
-import {Close} from '../../styles'
+import {Close, Button} from '../../styles'
 import Book from '../Book'
 
-const DetailedPanel = ({book, closePanel, state}) => {
+const DetailedPanel = ({book, closePanel, state, toggleFave}) => {
   const panelEl = useRef(null)
   const prevBook = useRef(null)
 
@@ -23,6 +23,9 @@ const DetailedPanel = ({book, closePanel, state}) => {
 
         {book && (
           <>
+            <Button onClick={() => toggleFave(book.id)} $hasEmoji={true}>
+              {book.isFaved ? '💔 Unfave book' : '❤️ Fave book'}
+            </Button>
             <Book book={book} isLarge={true} />
             <P>{book.description}</P>
             <P>
@@ -36,29 +39,3 @@ const DetailedPanel = ({book, closePanel, state}) => {
 }
 
 export default DetailedPanel
-
-// const DetailedPanel = ({book, closePanel}) => (
-//     <>
-//       <BG onClick={closePanel} />
-//       <Panel>
-//         <CloseWrapper onClick={closePanel}>
-//           <Close />
-//         </CloseWrapper>
-
-//         {book && (
-//           <>
-//             <Book book={book} isLarge={true} />
-//             {/* <figure>
-//         <img alt="" src={book.image} />
-//         <h3>{book.title}</h3>
-//         <h4>by {book.author}</h4>
-//       </figure> */}
-//             <P>{book.description}</P>
-//             <P>
-//               <Em>Published in {book.published}</Em>
-//             </P>
-//           </>
-//         )}
-//       </Panel>
-//     </>
-//   )

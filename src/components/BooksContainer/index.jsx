@@ -1,11 +1,26 @@
 import React, {useRef, useEffect, useState} from 'react'
 import {debounce} from 'lodash-es'
-import {Container, H2, BookList} from './styles'
+import {Container, H2, BookList, NoBooksContainer, H3, H4, SadFace} from './styles'
 import Book from '../Book'
+
+const NoBooksMessage = () => (
+  <NoBooksContainer>
+    <H3>Oh dear!</H3>
+    <SadFace />
+    <H4>There are no books to see here.</H4>
+  </NoBooksContainer>
+)
 
 const BooksContainer = ({books, pickBook, isPanelOpen, title}) => {
   const [scroll, setScroll] = useState(0)
   const prevPanelState = useRef(false)
+
+  useEffect(() => {
+    if (prevPanelState.current && !isPanelOpen) {
+      window.scroll(0, scroll)
+    }
+    prevPanelState.current = isPanelOpen
+  }, [isPanelOpen, prevPanelState, scroll])
 
   useEffect(() => {
     const handleScroll = debounce(() => {
@@ -21,20 +36,18 @@ const BooksContainer = ({books, pickBook, isPanelOpen, title}) => {
     }
   }, [isPanelOpen])
 
-  useEffect(() => {
-    if (prevPanelState.current && !isPanelOpen) {
-      window.scroll(0, scroll)
-    }
-    prevPanelState.current = isPanelOpen
-  }, [isPanelOpen, prevPanelState, scroll])
   return (
     <Container $isPanelOpen={isPanelOpen} $top={scroll}>
       <H2>{title}</H2>
-      <BookList>
-        {books.map((book) => (
-          <Book key={book.id} book={book} pickBook={pickBook} />
-        ))}
-      </BookList>
+      {books.length > 0 ? (
+        <BookList>
+          {books.map((book) => (
+            <Book key={book.id} book={book} pickBook={pickBook} />
+          ))}
+        </BookList>
+      ) : (
+        <NoBooksMessage />
+      )}
     </Container>
   )
 }

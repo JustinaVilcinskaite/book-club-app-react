@@ -28,3 +28,9 @@ export const HeaderContainer = styled.header`
     padding: 20px;
   }
 `
+
+export const RightConatiner = styled.div`
+  display: flex;
+  justify-content: space-between;
+  right: 0;
+`

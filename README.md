@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+# Book Club App - React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive React application for exploring a curated collection of books. Users can search by title or author, mark favorites, and view detailed information in an animated side panel. The UI is built with styled-components for a modern, mobile-first experience and features smooth transitions with persistent state stored in local storage.
 
-## Available Scripts
+## Project Overview
 
-In the project directory, you can run:
+This single-page React app displays a catalog of books fetched from a remote API and offers a clean interface for discovery and interaction. Users can browse book covers and metadata in a responsive grid, open an animated panel for more details, and curate personal favorites. The layout adapts across screen sizes with fluid transitions and retained preferences across sessions.
 
-### `npm start`
+## Key Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Book Display & Interaction
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Browse a responsive, styled grid of books with cover images and metadata
+- Click a book to open a sliding detail panel with full description and publication year
+- Mark or unmark books as favorites via a button in the detail panel
 
-### `npm test`
+### Search Functionality
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Real-time search input with support for both title and author queries
+- Responsive behavior: collapses on mobile, expands on click or focus
 
-### `npm run build`
+### Favorites Management
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Mark or unmark books as favorites via a button in the detail panel
+- Filter to display only favorite books
+- Favorite state is persisted in localStorage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Responsive Layout & UX
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Mobile-first design using media queries in styled-components
+- Smooth transitions and animated panel behavior using react-transition-group
+- Consistent styling with styled-components and custom global styles
 
-### `npm run eject`
+## Technologies Used
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **React** – Library for building component-based UIs
+- **styled-components** – For scoped CSS-in-JS styling
+- **react-transition-group** – To manage component transitions and animations
+- **Lodash (debounce)** – For scroll performance optimization
+- **Fetch API** – For retrieving book data from a remote endpoint
+- **LocalStorage** – For persistent favorite book tracking
+- **Yarn** – Dependency and script manager
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Screenshots
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Book List (Desktop)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![Book List Desktop](assets/screenshots/book-list-desktop.png)
 
-## Learn More
+### Book List (Mobile)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<img src="assets/screenshots/book-list-mobile.png" alt="Book List Mobile" width="250">
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Search Results (Found)
 
-### Code Splitting
+![Search Results](assets/screenshots/search-results.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Search Results (Not Found)
 
-### Analyzing the Bundle Size
+![Search No Results](assets/screenshots/search-no-results.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Book Detail View – Favorite
 
-### Making a Progressive Web App
+![Book Detail - Fave](assets/screenshots/book-detail-open-fave.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Book Detail View – Unfavorite
 
-### Advanced Configuration
+![Book Detail - Unfave](assets/screenshots/book-detail-open-unfave.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Favorites List
 
-### Deployment
+![Favorites List](assets/screenshots/favorites-list.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Favorites Empty State
 
-### `npm run build` fails to minify
+![Favorites Empty](assets/screenshots/favorites-empty.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Interaction Demo
+
+![Interaction Demo](assets/screenshots/interaction-demo.gif)
+
+## Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/JustinaVilcinskaite/book-club-app-react.git
+cd book-club-app-react
+```
+
+### 2. Install Dependencies
+
+```bash
+yarn install
+```
+
+### 3. Start the Development Server
+
+```bash
+yarn start
+```
+
+The app will be available at http://localhost:3000.
+
+## Project Structure
+
+```
+book-club-app-react/
+├── assets/                   # Custom SVG icons (logo, search, etc.)
+│   └── screenshots/          # Screenshots used in README documentation
+├── public/                   # Static assets (favicon, HTML)
+├── src/
+│   ├── components/           # Modular UI components
+│   │   ├── Book/             # Book card display
+│   │   ├── BooksContainer/   # Book grid with filtering logic
+│   │   ├── DetailedPanel/    # Sliding panel for book details
+│   │   ├── Header/           # Top navigation bar
+│   │   └── Search/           # Search input and favorite filter
+│   ├── App.jsx               # Main app component with layout and logic
+│   ├── index.js              # React root rendering
+│   ├── styles.js             # Global styles, shared button and layout components
+├── .gitignore
+├── package.json
+├── yarn.lock
+└── README.md
+```

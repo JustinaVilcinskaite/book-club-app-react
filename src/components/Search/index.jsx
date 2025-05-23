@@ -1,8 +1,17 @@
 import React, {useRef, useState} from 'react'
-import {SearchContainer, Input, Icon, Wrapper} from './styles'
-import {Close} from '../../styles'
+import {SearchContainer, Input, Icon, Wrapper, FaveButtonContainer, Counter} from './styles'
+import {Close, Button} from '../../styles'
 
-const Search = ({filterBooks}) => {
+const FaveButton = ({faveBooksLength, toggleShowFaves, showFaves}) => (
+  <FaveButtonContainer>
+    <Counter>{faveBooksLength}</Counter>
+    <Button onClick={toggleShowFaves} $isHeader={true}>
+      {showFaves ? 'Hide faves' : 'Show faves'}
+    </Button>
+  </FaveButtonContainer>
+)
+
+const Search = ({filterBooks, toggleShowFaves, showFaves, faveBooksLength}) => {
   const inputEl = useRef(null)
   const [showOnDesktop, setShowOnDesktop] = useState(false)
 
@@ -10,7 +19,9 @@ const Search = ({filterBooks}) => {
     filterBooks(event.target.value)
   }
 
-  console.log(inputEl.current)
+  const showSearch = () => {
+    setShowOnDesktop(true)
+  }
 
   const clearSearch = () => {
     filterBooks('')
@@ -18,12 +29,13 @@ const Search = ({filterBooks}) => {
     setShowOnDesktop(false)
   }
 
-  const showSearch = () => {
-    setShowOnDesktop(true)
-  }
-
   return (
     <Wrapper>
+      <FaveButton
+        toggleShowFaves={toggleShowFaves}
+        showFaves={showFaves}
+        faveBooksLength={faveBooksLength}
+      />
       <SearchContainer $showOnDesktop={showOnDesktop}>
         <Icon onClick={showSearch} />
         <Input ref={inputEl} type="text" name="search" autoComplete="off" onChange={handleChange} />
