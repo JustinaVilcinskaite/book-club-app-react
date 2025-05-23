@@ -45,7 +45,7 @@ This single-page React app displays a catalog of books fetched from a remote API
 
 ### Book List (Desktop)
 
-![Book List Desktop](assets/screenshots/book-list-desktop.png)
+<img src="assets/screenshots/book-list-desktop.png" alt="Book List Desktop" width="500">
 
 ### Book List (Mobile)
 
