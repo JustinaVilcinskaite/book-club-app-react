@@ -45,39 +45,39 @@ This single-page React app displays a catalog of books fetched from a remote API
 
 ### Book List (Desktop)
 
-<img src="assets/screenshots/book-list-desktop.png" alt="Book List Desktop" width="500">
+<img src="docs/screenshots/book-list-desktop.png" alt="Book List Desktop" width="500">
 
 ### Book List (Mobile)
 
-<img src="assets/screenshots/book-list-mobile.png" alt="Book List Mobile" width="250">
+<img src="docs/screenshots/book-list-mobile.png" alt="Book List Mobile" width="250">
 
 ### Search Results (Found)
 
-![Search Results](assets/screenshots/search-results.png)
+![Search Results](docs/screenshots/search-results.png)
 
 ### Search Results (Not Found)
 
-![Search No Results](assets/screenshots/search-no-results.png)
+![Search No Results](docs/screenshots/search-no-results.png)
 
 ### Book Detail View – Favorite
 
-![Book Detail - Fave](assets/screenshots/book-detail-open-fave.png)
+![Book Detail - Fave](docs/screenshots/book-detail-open-fave.png)
 
 ### Book Detail View – Unfavorite
 
-![Book Detail - Unfave](assets/screenshots/book-detail-open-unfave.png)
+![Book Detail - Unfave](docs/screenshots/book-detail-open-unfave.png)
 
 ### Favorites List
 
-![Favorites List](assets/screenshots/favorites-list.png)
+![Favorites List](docs/screenshots/favorites-list.png)
 
 ### Favorites Empty State
 
-![Favorites Empty](assets/screenshots/favorites-empty.png)
+![Favorites Empty](docs/screenshots/favorites-empty.png)
 
 ### Interaction Demo
 
-![Interaction Demo](assets/screenshots/interaction-demo.gif)
+![Interaction Demo](docs/screenshots/interaction-demo.gif)
 
 ## Getting Started
 

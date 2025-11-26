@@ -68,7 +68,6 @@ export const H4 = styled.h4`
   }
 `
 
-
 export const SadFace = styled(SadFaceSVG)`
   margin: 20px 0;
 `
