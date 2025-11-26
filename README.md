@@ -106,21 +106,23 @@ The app will be available at http://localhost:3000.
 
 ```
 book-club-app-react/
-├── assets/                   # Custom SVG icons (logo, search, etc.)
-│   └── screenshots/          # Screenshots used in README documentation
-├── public/                   # Static assets (favicon, HTML)
+├── docs/                      # Documentation files
+│   └── screenshots/           # Screenshots used in README
+├── public/                    # Static public assets (favicon, index.html)
 ├── src/
-│   ├── components/           # Modular UI components
-│   │   ├── Book/             # Book card display
-│   │   ├── BooksContainer/   # Book grid with filtering logic
-│   │   ├── DetailedPanel/    # Sliding panel for book details
-│   │   ├── Header/           # Top navigation bar
-│   │   └── Search/           # Search input and favorite filter
-│   ├── App.jsx               # Main app component with layout and logic
-│   ├── index.js              # React root rendering
-│   ├── styles.js             # Global styles, shared button and layout components
+│   ├── assets/                # App UI assets (SVG icons used in React)
+│   ├── components/            # Modular UI components
+│   │   ├── Book/              # Book card display
+│   │   ├── BooksContainer/    # Book grid with filtering & empty state UI
+│   │   ├── DetailedPanel/     # Sliding detail panel w/ favorite action
+│   │   ├── Header/            # Top navigation with logo
+│   │   └── Search/            # Search bar + favorites filter
+│   ├── App.jsx                # Main application layout & routing logic
+│   ├── index.js               # React render mount point
+│   ├── styles.js              # Global styles and shared UI components
 ├── .gitignore
 ├── package.json
 ├── yarn.lock
 └── README.md
+
 ```
