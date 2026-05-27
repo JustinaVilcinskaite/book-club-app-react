@@ -1,128 +1,129 @@
-# Book Club App - React
+# Book Club App – React
 
-A responsive React application for exploring a curated collection of books. Users can search by title or author, mark favorites, and view detailed information in an animated side panel. The UI is built with styled-components for a modern, mobile-first experience and features smooth transitions with persistent state stored in local storage.
+Responsive React app for browsing a book collection fetched from a remote API, searching by title or author, saving favorites, and viewing book details in a sliding detail panel.
 
-## Project Overview
+The UI is built with styled-components, and favorites are stored in localStorage so they persist between sessions.
 
-This single-page React app displays a catalog of books fetched from a remote API and offers a clean interface for discovery and interaction. Users can browse book covers and metadata in a responsive grid, open an animated panel for more details, and curate personal favorites. The layout adapts across screen sizes with fluid transitions and retained preferences across sessions.
+## Tech Stack
 
-## Key Features
+- React
+- JavaScript
+- Create React App
+- styled-components
+- Fetch API
+- localStorage
+- react-transition-group
+
+## Features
 
 ### Book Display & Interaction
 
-- Browse a responsive, styled grid of books with cover images and metadata
-- Click a book to open a sliding detail panel with full description and publication year
-- Mark or unmark books as favorites via a button in the detail panel
+- Fetches and displays a collection of books from a remote API
+- Responsive book grid with cover images, titles, and authors
+- Select a book to open a sliding detail panel with description and publication information
 
-### Search Functionality
+### Search
 
-- Real-time search input with support for both title and author queries
-- Responsive behavior: collapses on mobile, expands on click or focus
+- Search by book title or author
+- Results update as the user types
+- Empty state shown when there are no books to display
 
 ### Favorites Management
 
-- Mark or unmark books as favorites via a button in the detail panel
+- Add and remove favorite books from the detail panel
 - Filter to display only favorite books
-- Favorite state is persisted in localStorage
+- Favorites persist between sessions using localStorage
 
-### Responsive Layout & UX
+### Responsive UI & Interaction
 
-- Mobile-first design using media queries in styled-components
-- Smooth transitions and animated panel behavior using react-transition-group
-- Consistent styling with styled-components and custom global styles
-
-## Technologies Used
-
-- **React** – Library for building component-based UIs
-- **styled-components** – For scoped CSS-in-JS styling
-- **react-transition-group** – To manage component transitions and animations
-- **Lodash (debounce)** – For scroll performance optimization
-- **Fetch API** – For retrieving book data from a remote endpoint
-- **LocalStorage** – For persistent favorite book tracking
-- **Yarn** – Dependency and script manager
+- Responsive layout built with styled-components
+- Smooth detail panel transitions using react-transition-group
+- Scroll position is preserved when opening and closing the detail panel
 
 ## Screenshots
 
-### Book List (Desktop)
+### Book List – Desktop
 
-<img src="docs/screenshots/book-list-desktop.png" alt="Book List Desktop" width="500">
+<img src="docs/screenshots/book-list-desktop.png" alt="Book list desktop view" width="500">
 
-### Book List (Mobile)
+### Book List – Mobile
 
-<img src="docs/screenshots/book-list-mobile.png" alt="Book List Mobile" width="250">
+<img src="docs/screenshots/book-list-mobile.png" alt="Book list mobile view" width="250">
 
-### Search Results (Found)
+### Search Results
 
-![Search Results](docs/screenshots/search-results.png)
+![Search results](docs/screenshots/search-results.png)
 
-### Search Results (Not Found)
+### Search Empty State
 
-![Search No Results](docs/screenshots/search-no-results.png)
+![Search empty state](docs/screenshots/search-no-results.png)
 
-### Book Detail View – Favorite
+### Book Detail View – Favorited
 
-![Book Detail - Fave](docs/screenshots/book-detail-open-fave.png)
+![Book detail view with favorited book](docs/screenshots/book-detail-open-fave.png)
 
-### Book Detail View – Unfavorite
+### Book Detail View – Not Favorited
 
-![Book Detail - Unfave](docs/screenshots/book-detail-open-unfave.png)
+![Book detail view with not favorited book](docs/screenshots/book-detail-open-unfave.png)
 
 ### Favorites List
 
-![Favorites List](docs/screenshots/favorites-list.png)
+![Favorites list](docs/screenshots/favorites-list.png)
 
 ### Favorites Empty State
 
-![Favorites Empty](docs/screenshots/favorites-empty.png)
+![Favorites empty state](docs/screenshots/favorites-empty.png)
 
 ### Interaction Demo
 
-![Interaction Demo](docs/screenshots/interaction-demo.gif)
+![Interaction demo](docs/screenshots/interaction-demo.gif)
 
 ## Getting Started
 
-### 1. Clone the Repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/JustinaVilcinskaite/book-club-app-react.git
 cd book-club-app-react
 ```
 
-### 2. Install Dependencies
+### 2. Install dependencies
 
 ```bash
 yarn install
 ```
 
-### 3. Start the Development Server
+### 3. Run the development server
 
 ```bash
 yarn start
 ```
 
-The app will be available at http://localhost:3000.
+The app will be available at:
+
+```bash
+http://localhost:3000
+```
 
 ## Project Structure
 
-```
+```text
 book-club-app-react/
-├── docs/                      # Documentation files
-│   └── screenshots/           # Screenshots used in README
-├── public/                    # Static public assets (favicon, index.html)
+├── docs/
+│   └── screenshots/           # README screenshots
+├── public/                    # Static public assets
 ├── src/
-│   ├── assets/                # App UI assets (SVG icons used in React)
-│   ├── components/            # Modular UI components
-│   │   ├── Book/              # Book card display
-│   │   ├── BooksContainer/    # Book grid with filtering & empty state UI
-│   │   ├── DetailedPanel/     # Sliding detail panel w/ favorite action
-│   │   ├── Header/            # Top navigation with logo
-│   │   └── Search/            # Search bar + favorites filter
-│   ├── App.jsx                # Main application layout & routing logic
-│   ├── index.js               # React render mount point
-│   ├── styles.js              # Global styles and shared UI components
-├── .gitignore
+│   ├── assets/                # SVG icons and UI assets
+│   ├── components/            # Reusable UI components
+│   │   ├── Book/              # Book card
+│   │   ├── BooksContainer/    # Book grid and empty state
+│   │   ├── DetailedPanel/     # Sliding book detail panel
+│   │   ├── Header/            # Header and logo
+│   │   └── Search/            # Search and favorites filter
+│   ├── App.jsx                # Main application component and state logic
+│   ├── index.js               # React entry point
+│   └── styles.js              # Global styles and shared styled components
 ├── package.json
 ├── yarn.lock
 └── README.md
-
 ```
