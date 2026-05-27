@@ -76,7 +76,7 @@ The UI is built with styled-components, and favorites are stored in localStorage
 
 ### Interaction Demo
 
-![Interaction demo](docs/screenshots/interaction-demo.gif)
+![Interaction Demo](docs/screenshots/interaction-demo.gif)
 
 ## Getting Started
 
